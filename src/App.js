@@ -1,21 +1,18 @@
 import React, { Component } from "react";
 import NavigationTop from "./components/NavigationTop";
+import { BrowserRouter } from 'react-router-dom';
 import Routes from "./components/Routes";
-import Loader from "react-loader-spinner";
+
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <BrowserRouter>
+        <div className="App">
         <NavigationTop />
         <Routes />
-        <Loader 
-         type="Puff"
-         color="#00BFFF"
-         height="100"	
-         width="100"
-      /> 
-      </div>
+        </div>
+      </BrowserRouter>
     );
   }
 }

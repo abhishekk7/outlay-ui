@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Table } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 import axios from "axios";
-import { from } from "rxjs";
 
 class TransactionsPage extends Component {
   state = {
@@ -24,7 +23,7 @@ class TransactionsPage extends Component {
   render() {
     return (
       <div className="container">
-        <Table striped bordered hover className="my-4">
+        <table className="striped responsive-table">
           <thead>
             <tr>
               <th>Date</th>
@@ -45,12 +44,16 @@ class TransactionsPage extends Component {
                 <td>{transaction.transaction_type}</td>
                 <td>{transaction.amount + transaction.iso_currency_code}</td>
                 <td>{transaction.category.map(value => (
-                    <li key={value}>{value}</li>
-                  ))}</td>
+                  <div key={value}>
+                    <Link to={'/trends?type=' + value}>
+                      <span className="card-title blue-text">{value}</span>
+                    </Link>
+                  </div>
+                ))}</td>
               </tr>
             ))}
           </tbody>
-        </Table>
+        </table>
       </div>
     );
   }
