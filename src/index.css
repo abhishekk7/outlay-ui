@@ -6,9 +6,32 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #fafafa;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+ul.collection {
+  border: none;
+}
+
+ul.collection .circle {
+  border-radius: 0%;
+}
+
+ul.collection .flow-text {
+  color: #2E7D32 !important;
+}
+
+.custom-dollar-sign {
+  background: #004d40;
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+  border-radius: 50%;
+  position: relative;
+  margin: 5px;
 }
